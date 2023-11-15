@@ -28,3 +28,11 @@
 
     <button type="submit" [disabled]="form.invalid">Submit</button>
 </form>
+
+<div *ngIf="submittedValues">
+    <h2>Submitted Values</h2>
+    <p>First Name: {{ submittedValues.firstName }}</p>
+    <p>Last Name: {{ submittedValues.lastName }}</p>
+    <p>Gender: {{ submittedValues.gender }}</p>
+    <p>Email: {{ submittedValues.email }}</p>
+</div>

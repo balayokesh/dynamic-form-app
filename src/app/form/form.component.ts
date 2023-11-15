@@ -26,6 +26,7 @@ export class FormComponent implements OnInit {
 
   form!: FormGroup;
   formFields!: FormFieldDefinition[];
+  submittedValues: any = null;
 
   constructor(private fb: FormBuilder) { }
 
@@ -124,6 +125,8 @@ export class FormComponent implements OnInit {
   handleSubmit = () => {
     if (this.form.valid) {
       console.log('Form submitted successfully', this.form.value);
+      this.submittedValues = this.form.value; 
+      this.form.reset();
     } else {
       console.log('Form is invalid. Please check the fields.');
     }
